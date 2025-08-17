@@ -1,0 +1,8 @@
+<h2>personnage</h2>
+
+<div *ngIf="character$ | async as character">
+  <p><strong>Nom :</strong> {{ character.nom }}</p>
+  <p><strong>Prenom :</strong> {{ character.prenom }}</p>
+  <p><strong>Âge :</strong> {{ character.age }}</p>
+  <p><strong>Bio :</strong> {{ character.bio }}</p>
+</div>

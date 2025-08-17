@@ -1,0 +1,25 @@
+<form [formGroup]="addCharacterForm" (ngSubmit)="onSubmit()">
+
+  <label>Nom :</label>
+  <input formControlName="nom" />
+  <div *ngIf="addCharacterForm.get('nom')?.invalid && addCharacterForm.get('nom')?.touched">
+    Le nom est obligatoire.
+  </div>
+
+  <label>Prénom :</label>
+  <input formControlName="prenom" />
+  <div *ngIf="addCharacterForm.get('prenom')?.invalid && addCharacterForm.get('prenom')?.touched">
+    Le prénom doit contenir au moins 2 caractères.
+  </div>
+
+  <label>Âge :</label>
+  <input type="number" formControlName="age" />
+  <div *ngIf="addCharacterForm.get('age')?.invalid && addCharacterForm.get('age')?.touched">
+    L'âge doit être compris entre 0 et 120.
+  </div>
+
+  <label>Bio :</label>
+  <textarea formControlName="bio"></textarea>
+
+  <button type="submit" [disabled]="addCharacterForm.invalid">Ajouter</button>
+</form>

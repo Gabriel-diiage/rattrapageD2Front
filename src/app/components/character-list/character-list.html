@@ -1,0 +1,11 @@
+
+<h2>Les personnages</h2>
+
+<ul>
+  <li *ngFor="let character of characters$ | async">
+    <h3>{{ character.prenom }} {{ character.nom | deNom }}</h3>
+    <p [appHighlightAge]="character.age">{{ character.nom }}</p>
+    <p>Âge : {{ character.age | ageSuffix }}</p>
+    <p>{{ character.bio }}</p>
+  </li>
+</ul>
